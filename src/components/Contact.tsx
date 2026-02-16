@@ -32,7 +32,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulasi pengiriman pesan
     toast({
       title: "Pesan terkirim!",
       description: "Terima kasih telah menghubungi. Saya akan membalas secepatnya.",
@@ -41,7 +40,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-24 px-6 bg-background relative">
+      {/* Background grid subtle untuk footer area juga */}
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px] -z-10" />
+
       <div className="container mx-auto max-w-xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -70,6 +72,7 @@ const Contact = () => {
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
+              className="bg-card"
             />
           </div>
           <div className="space-y-2">
@@ -81,6 +84,7 @@ const Contact = () => {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
+              className="bg-card"
             />
           </div>
           <div className="space-y-2">
@@ -92,6 +96,7 @@ const Contact = () => {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
+              className="bg-card"
             />
           </div>
           <Button type="submit" className="w-full" size="lg">
@@ -119,7 +124,7 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* FOOTER & ATTRIBUTION (SC) */}
+        {/* SINGLE FOOTER SECTION */}
         <div className="mt-20 border-t border-border pt-8 text-center flex flex-col gap-2">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Muhammad Ferry Saputra. All rights reserved.

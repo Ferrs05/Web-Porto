@@ -14,9 +14,7 @@ const Index = () => {
         <Projects />
         <Contact />
       </main>
-      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
-        <p>© 2026 — Built with passion & caffeine.</p>
-      </footer>
+      {/* BAGIAN FOOTER DI SINI SUDAH SAYA HAPUS AGAR TIDAK DOUBLE */}
     </div>
   );
 };
